@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acompanhamento – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Iluminação Pública</div>
+      </div>
+    </a>
+  </nav>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Início</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/consultar">Consultar Solicitação</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Acompanhamento</span>
+    </div>
+
+    <div id="acomp-loading" style="text-align:center;padding:3rem">
+      <div class="spinner" style="width:40px;height:40px;border-color:rgba(37,99,235,0.2);border-top-color:var(--blue-mid);margin:0 auto 1rem"></div>
+      <p style="color:var(--gray-400)">Carregando solicitação...</p>
+    </div>
+
+    <div id="acomp-error" class="alert alert-danger" style="display:none;max-width:500px;margin:2rem auto;">
+      <span>❌</span>
+      <div>
+        <strong>Protocolo não encontrado</strong>
+        <div class="error-msg" style="font-size:0.85rem;margin-top:4px"></div>
+        <a href="/consultar" style="font-size:0.85rem;color:inherit;text-decoration:underline;display:block;margin-top:6px">← Tentar novamente</a>
+      </div>
+    </div>
+
+    <div id="acomp-container" style="display:none;">
+      <div class="card" style="margin-bottom:1.25rem">
+        <div class="card-title">📋 Dados da Solicitação</div>
+        <div class="info-grid">
+          <div class="info-item"><label>Protocolo</label><span id="acomp-protocolo" style="font-family:monospace;color:var(--blue-mid)"></span></div>
+          <div class="info-item"><label>Tipo do Problema</label><span id="acomp-tipo"></span></div>
+          <div class="info-item"><label>Bairro</label><span id="acomp-bairro"></span></div>
+          <div class="info-item"><label>Prioridade</label><span id="acomp-prioridade"></span></div>
+          <div class="info-item" style="grid-column:1/-1"><label>Status Atual</label><span id="acomp-status"></span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🕓 Histórico de Atualizações</div>
+        <ul class="timeline" id="timeline"></ul>
+      </div>
+
+      <div style="margin-top:1.25rem">
+        <a href="/consultar" class="btn btn-secondary">← Voltar</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

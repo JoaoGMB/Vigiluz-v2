@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consultar Solicitação – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Iluminação Pública</div>
+      </div>
+    </a>
+    <div class="navbar-nav">
+      <a href="/denuncia">Fazer Denúncia</a>
+      <a href="/funcionario/login">Funcionário</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Início</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Consultar Solicitação</span>
+    </div>
+
+    <div class="card" style="max-width:560px;margin:0 auto;">
+      <div class="card-title">🔍 Consultar Solicitação</div>
+      <p style="font-size:0.875rem;color:var(--gray-400);margin-bottom:1.25rem;">
+        Informe o número do protocolo recebido no momento do registro da ocorrência.
+      </p>
+      <form onsubmit="consultarSolicitacao(event)">
+        <div class="form-group">
+          <label for="protocolo-input">Número do Protocolo</label>
+          <input class="form-control" type="text" id="protocolo-input"
+            placeholder="Ex: VIGI-20260610-0001" style="font-family:monospace;font-size:1rem;" required/>
+        </div>
+        <div class="btn-group">
+          <a href="/" class="btn btn-secondary">← Voltar</a>
+          <button type="submit" class="btn btn-primary">🔍 Consultar</button>
+        </div>
+      </form>
+
+      <hr/>
+      <div style="font-size:0.8rem;color:var(--gray-400)">
+        <strong>Dica:</strong> O protocolo é enviado no momento do registro. Formato: VIGI-AAAAMMDD-NNNN
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

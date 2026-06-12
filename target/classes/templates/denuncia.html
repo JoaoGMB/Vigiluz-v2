@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fazer Denúncia – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Iluminação Pública</div>
+      </div>
+    </a>
+    <div class="navbar-nav">
+      <a href="/consultar">Consultar</a>
+      <a href="/funcionario/login">Funcionário</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Início</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Registrar Ocorrência</span>
+    </div>
+
+    <div class="steps">
+      <div class="step active"><div class="step-num">1</div><div>Dados</div></div>
+      <div class="step"><div class="step-num">2</div><div>Confirmação</div></div>
+      <div class="step"><div class="step-num">3</div><div>Protocolo</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📢 Registrar Ocorrência</div>
+
+      <div class="alert alert-info">
+        <span>ℹ️</span>
+        <span>Você pode registrar uma ocorrência de forma anônima. Marque a opção abaixo.</span>
+      </div>
+
+      <form id="form-denuncia" onsubmit="submitDenuncia(event)">
+        <div class="form-group">
+          <label for="categoria">Tipo do Problema *</label>
+          <select class="form-control" id="categoria" name="categoria" required>
+            <option value="">Selecione o tipo...</option>
+            <option value="POSTE_APAGADO">💡 Poste Apagado</option>
+            <option value="LUZ_PISCANDO">⚡ Luz Piscando</option>
+            <option value="FIACAO_EXPOSTA">⚠️ Fiação Exposta</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição do Problema *</label>
+          <textarea class="form-control" id="descricao" name="descricao" rows="4"
+            placeholder="Descreva o problema com detalhes: localização exata, horário que ocorre, etc." required></textarea>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group">
+            <label for="bairro">Bairro *</label>
+            <input class="form-control" type="text" id="bairro" name="bairro"
+              placeholder="Ex: Centro, Jardim Europa..." required/>
+          </div>
+          <div class="form-group">
+            <label for="rua">Rua / Logradouro</label>
+            <input class="form-control" type="text" id="rua" name="rua"
+              placeholder="Ex: Rua das Flores, 123"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prioridade">Prioridade</label>
+          <select class="form-control" id="prioridade" name="prioridade">
+            <option value="BAIXA">🟢 Baixa</option>
+            <option value="MEDIA" selected>🟡 Média</option>
+            <option value="ALTA">🔴 Alta</option>
+          </select>
+        </div>
+
+        <hr/>
+
+        <div class="form-group">
+          <label class="form-check">
+            <input type="checkbox" id="anonima" name="anonima"/>
+            🔒 Denúncia Anônima – Não incluir meus dados na solicitação
+          </label>
+        </div>
+
+        <div class="btn-group" style="margin-top:1rem">
+          <a href="/" class="btn btn-secondary">← Voltar</a>
+          <button type="submit" class="btn btn-primary">📤 Enviar Denúncia</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

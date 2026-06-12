@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Painel do Funcionário</div>
+      </div>
+    </a>
+    <div class="navbar-nav">
+      <a href="/funcionario/painel" class="active">Solicitações</a>
+      <a href="/" onclick="sessionStorage.removeItem('funcionario')">Sair</a>
+    </div>
+  </nav>
+
+  <main class="wide">
+    <div class="layout-sidebar">
+      <div class="sidebar">
+        <div class="card" style="padding:1rem">
+          <div style="font-size:0.75rem;text-transform:uppercase;color:var(--gray-400);letter-spacing:0.5px;margin-bottom:0.75rem">Menu</div>
+          <ul class="sidebar-menu">
+            <li><a href="/funcionario/painel" class="active"><span class="icon">📋</span>Solicitações</a></li>
+            <li><a href="#dashboard-section"><span class="icon">📊</span>Dashboard</a></li>
+            <li><a href="/"><span class="icon">🏠</span>Início</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-area">
+        
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total</div>
+            <div class="stat-value" id="stat-total">–</div>
+          </div>
+          <div class="stat-card red">
+            <div class="stat-label">Abertas</div>
+            <div class="stat-value" id="stat-abertas">–</div>
+          </div>
+          <div class="stat-card yellow">
+            <div class="stat-label">Em Análise</div>
+            <div class="stat-value" id="stat-analise">–</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-label">Resolvidas</div>
+            <div class="stat-value" id="stat-resolvidas">–</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:1.25rem">
+          <div class="card-title">🔎 Filtros</div>
+          <div class="filter-bar">
+            <div class="form-group">
+              <label>Status</label>
+              <select class="form-control" id="filtro-status" onchange="filtrarPainel()">
+                <option value="">Todos</option>
+                <option value="ABERTO">Aberto</option>
+                <option value="TRIAGEM">Em Análise</option>
+                <option value="EM_EXECUCAO">Em Execução</option>
+                <option value="RESOLVIDO">Resolvido</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Bairro</label>
+              <input class="form-control" type="text" id="filtro-bairro" placeholder="Filtrar por bairro..." oninput="filtrarPainel()"/>
+            </div>
+            <div class="form-group">
+              <label>Prioridade</label>
+              <select class="form-control" id="filtro-prio" onchange="filtrarPainel()">
+                <option value="">Todas</option>
+                <option value="ALTA">Alta</option>
+                <option value="MEDIA">Média</option>
+                <option value="BAIXA">Baixa</option>
+              </select>
+            </div>
+            <button class="btn btn-secondary" onclick="document.getElementById('filtro-status').value='';document.getElementById('filtro-bairro').value='';document.getElementById('filtro-prio').value='';filtrarPainel()">↺ Limpar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">📋 Solicitações</div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Protocolo</th>
+                  <th>Tipo</th>
+                  <th>Bairro</th>
+                  <th>Prioridade</th>
+                  <th>Status</th>
+                  <th>Data</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="painel-tbody">
+                <tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--gray-400)">Carregando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="dashboard-section" style="margin-top:1.5rem">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+            <div class="card">
+              <div class="card-title">📊 Status das Solicitações</div>
+              <canvas id="chart-status" height="220"></canvas>
+            </div>
+            <div class="card">
+              <div class="card-title">📍 Solicitações por Bairro</div>
+              <canvas id="chart-bairro" height="220"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

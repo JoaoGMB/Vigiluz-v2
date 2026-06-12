@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VigiLuz – Iluminação Pública</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Iluminação Pública</div>
+      </div>
+    </a>
+    <div class="navbar-nav">
+      <a href="/consultar">Consultar</a>
+      <a href="/funcionario/login">Área do Funcionário</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="hero-icon">🔦</div>
+      <h1>VigiLuz</h1>
+      <p>Sistema Inteligente de Gerenciamento de Iluminação Pública. Registre ocorrências, acompanhe o status e contribua para uma cidade mais iluminada.</p>
+    </div>
+
+    <div class="action-grid">
+      <a href="/denuncia" class="action-card">
+        <div class="action-card-icon">📢</div>
+        <h3>Fazer Denúncia</h3>
+        <p>Registre um problema de iluminação pública de forma rápida e fácil, com ou sem cadastro.</p>
+        <span class="btn btn-primary">Registrar Ocorrência →</span>
+      </a>
+      <a href="/consultar" class="action-card">
+        <div class="action-card-icon">🔍</div>
+        <h3>Consultar Solicitação</h3>
+        <p>Acompanhe o andamento da sua solicitação pelo número do protocolo gerado.</p>
+        <span class="btn btn-secondary">Consultar →</span>
+      </a>
+      <a href="/funcionario/login" class="action-card">
+        <div class="action-card-icon">🛠️</div>
+        <h3>Área do Funcionário</h3>
+        <p>Acesso restrito para funcionários gerenciarem e atualizarem as solicitações.</p>
+        <span class="btn btn-secondary">Entrar →</span>
+      </a>
+    </div>
+
+    <div style="margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+      <div class="card" style="text-align:center;border-left:4px solid var(--blue-mid)">
+        <div style="font-size:1.8rem;margin-bottom:0.25rem">⚡</div>
+        <div style="font-size:0.8rem;color:var(--gray-400)">Resposta Rápida</div>
+        <div style="font-weight:600;color:var(--blue-dark)">Atendimento ágil</div>
+      </div>
+      <div class="card" style="text-align:center;border-left:4px solid var(--success)">
+        <div style="font-size:1.8rem;margin-bottom:0.25rem">🔒</div>
+        <div style="font-size:0.8rem;color:var(--gray-400)">Privacidade</div>
+        <div style="font-weight:600;color:var(--blue-dark)">Denúncia anônima</div>
+      </div>
+      <div class="card" style="text-align:center;border-left:4px solid var(--warning)">
+        <div style="font-size:1.8rem;margin-bottom:0.25rem">📋</div>
+        <div style="font-size:0.8rem;color:var(--gray-400)">Transparência</div>
+        <div style="font-weight:600;color:var(--blue-dark)">Rastreamento em tempo real</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

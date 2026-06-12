@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Protocolo Gerado – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Iluminação Pública</div>
+      </div>
+    </a>
+  </nav>
+
+  <main>
+    <div class="steps">
+      <div class="step done"><div class="step-num">✓</div><div>Dados</div></div>
+      <div class="step done"><div class="step-num">✓</div><div>Confirmação</div></div>
+      <div class="step active"><div class="step-num">3</div><div>Protocolo</div></div>
+    </div>
+
+    <div class="card" style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="alert alert-success" style="justify-content:center;">
+        <span>✅</span>
+        <span><strong>Solicitação registrada com sucesso!</strong><br/>Guarde o número do protocolo para acompanhar o andamento.</span>
+      </div>
+
+      <div class="protocol-box" id="protocolo-result">
+        <div class="protocol-label">Número do Protocolo</div>
+        <div class="protocol-number">VIGI-2026-000001</div>
+        <div class="protocol-status">Status: Aberto</div>
+      </div>
+
+      <p style="font-size:0.875rem;color:var(--gray-400);margin-bottom:1.5rem;">
+        ⏱️ Prazo estimado de resposta: <strong>até 5 dias úteis</strong>
+      </p>
+
+      <div class="btn-group" style="justify-content:center;">
+        <a href="/consultar" id="btn-consultar" class="btn btn-primary">🔍 Consultar Solicitação</a>
+        <a href="/denuncia" class="btn btn-secondary">➕ Nova Denúncia</a>
+        <a href="/" class="btn btn-secondary">🏠 Voltar ao Início</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

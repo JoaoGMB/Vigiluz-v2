@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes da Solicitação – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Painel do Funcionário</div>
+      </div>
+    </a>
+    <div class="navbar-nav">
+      <a href="/funcionario/painel">← Painel</a>
+      <a href="/" onclick="sessionStorage.removeItem('funcionario')">Sair</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Início</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/funcionario/painel">Painel</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Detalhes da Solicitação</span>
+    </div>
+
+    <div class="layout-sidebar">
+      <div class="sidebar">
+        <div class="card" style="padding:1rem">
+          <div style="font-size:0.75rem;text-transform:uppercase;color:var(--gray-400);letter-spacing:0.5px;margin-bottom:0.75rem">Menu</div>
+          <ul class="sidebar-menu">
+            <li><a href="/funcionario/painel"><span class="icon">📋</span>Solicitações</a></li>
+            <li><a href="/funcionario/detalhes" class="active"><span class="icon">🔎</span>Detalhes</a></li>
+            <li><a href="/"><span class="icon">🏠</span>Início</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-area">
+        
+        <div class="card" style="margin-bottom:1.25rem">
+          <div class="card-title">📄 Dados da Ocorrência</div>
+          <div class="info-grid" style="margin-bottom:1rem">
+            <div class="info-item"><label>Protocolo</label><span id="det-protocolo" style="font-family:monospace;color:var(--blue-mid)"></span></div>
+            <div class="info-item"><label>Tipo do Problema</label><span id="det-tipo"></span></div>
+            <div class="info-item"><label>Bairro</label><span id="det-bairro"></span></div>
+            <div class="info-item"><label>Prioridade</label><span id="det-prio"></span></div>
+            <div class="info-item"><label>Status Atual</label><span id="det-status"></span></div>
+          </div>
+          <div>
+            <label style="font-size:0.75rem;color:var(--gray-400);text-transform:uppercase;display:block;margin-bottom:4px">Descrição</label>
+            <div id="det-descricao" style="background:var(--gray-light);border-radius:8px;padding:0.75rem;font-size:0.875rem;color:var(--gray-600);border:1px solid var(--gray-200)"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:1.25rem">
+          <div class="card-title">🕓 Histórico Completo</div>
+          <ul class="timeline" id="det-timeline">
+            <li><div style="color:var(--gray-400);font-size:0.85rem">Carregando histórico...</div></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">✏️ Atualização da Solicitação</div>
+          <form onsubmit="salvarStatus(event)">
+            <div class="form-group">
+              <label for="novo-status">Novo Status</label>
+              <select class="form-control" id="novo-status" required>
+                <option value="ABERTO">Aberto</option>
+                <option value="TRIAGEM">Em Análise</option>
+                <option value="EM_EXECUCAO">Em Execução</option>
+                <option value="RESOLVIDO">Resolvido</option>
+                <option value="ENCERRADO">Encerrado</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="comentario">Comentário</label>
+              <textarea class="form-control" id="comentario" rows="3"
+                placeholder="Descreva a ação tomada, observações importantes..."></textarea>
+            </div>
+            <div class="btn-group">
+              <a href="/funcionario/painel" class="btn btn-secondary">← Voltar</a>
+              <button type="submit" class="btn btn-success">💾 Salvar Alteração</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – VigiLuz</title>
+  <link rel="stylesheet" href="/css/vigiluz.css"/>
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh">
+  <nav class="navbar">
+    <a href="/" class="navbar-brand">
+      <div class="navbar-logo">💡</div>
+      <div>
+        <div class="navbar-title">VigiLuz</div>
+        <div class="navbar-subtitle">Iluminação Pública</div>
+      </div>
+    </a>
+  </nav>
+
+  <div class="breadcrumb" style="padding:1rem 2rem 0;max-width:900px;margin:0 auto;width:100%">
+    <a href="/">Início</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Login do Funcionário</span>
+  </div>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem">🛠️</div>
+        <h2>Login do Funcionário</h2>
+        <p>Acesso restrito à área administrativa</p>
+      </div>
+
+      <form onsubmit="loginFuncionario(event)">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input class="form-control" type="email" id="email" name="email"
+            placeholder="funcionario@vigiluz.gov.br" required/>
+        </div>
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input class="form-control" type="password" id="senha" name="senha"
+            placeholder="••••••••" required/>
+        </div>
+
+        <div class="alert alert-info" style="font-size:0.8rem;margin-bottom:1rem">
+          <span>ℹ️</span>
+          <span>Para demonstração, utilize qualquer e-mail e senha.</span>
+        </div>
+
+        <div class="btn-group">
+          <a href="/" class="btn btn-secondary" style="flex:1;justify-content:center">← Voltar</a>
+          <button type="submit" class="btn btn-primary" style="flex:1;justify-content:center">Entrar →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 VigiLuz – Sistema de Gerenciamento de Iluminação Pública</p>
+  </footer>
+  <script src="/js/vigiluz.js"></script>
+</body>
+</html>
